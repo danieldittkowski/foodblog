@@ -1,0 +1,32 @@
+@import url(styles.css);
+
+.container {
+    background-color: var(--secondary-color);
+    height: 13vh;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0.5em 0;
+}
+
+.socials .icon {
+    height: 3vh;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 0.5em 0 0 0;
+}
+
+.logo-container .logo {
+    height: 5vh;
+}

@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #5E8962;
+    --secondary-color: #415D43;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("font/Poppins/Poppins-Regular.ttf") format('truetype'),
+        url("font/Poppins/Poppins-Regular.woff2") format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins-italic";
+    src: url("font/Poppins/Poppins-Italic.ttf") format('truetype'),
+        url("font/Poppins/Poppins-Italic.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "Poppins-bold";
+    src: url("font/Poppins/Poppins-Bold.ttf") format('truetype'),
+        url("font/Poppins/Poppins-Bold.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "Poppins-boldItalic";
+    src: url("../font/Poppins/Poppins-BoldItalic.ttf") format('truetype'),
+        url("../font/Poppins/Poppins-BoldItalic.woff2") format('woff2');
+}
+
