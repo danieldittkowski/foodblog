@@ -6,34 +6,55 @@
 </head>
 
 <body>
-    <nav id="top">
-        <ul>
-            <li>
-                <a href="index.php">
-                    <img class="logo" src="../logos/logo-light-greenBackground.svg">
-                </a>    
-            </li>
-            <li class="expandable"></li>
-            <li>
-                <a href="blogs.html">
-                    Blogs
-                </a>
-            </li>
-            <li>
-                <a href="rezepte.html">
-                    Rezepte
-                </a>
-            </li>
-            <li>
-                <img class="icon" src="../icons/search-circle-white.svg">
-            </li>
-            <li>
-                <a href="user.php">
-                    <img class="icon" src="../icons/person-circle-white.svg">
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <header>
+        <a href="index.php">
+            <img class="logo" src="../logos/logo-light-greenBackground.svg">
+        </a>
+        <nav id="top" class="desktop-view">
+            <ul>
+                <li>
+                    <a href="blogs.html" class="font">
+                        Blogs
+                    </a>
+                </li>
+                <li>
+                    <a href="rezepte.html" class="font">
+                        Rezepte
+                    </a>
+                </li>
+                <li>
+                    <img class="icon" src="../icons/search-white.svg">
+                </li>
+                <li>
+                    <a href="user.php">
+                        <img class="icon" src="../icons/person-circle-white.svg">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="top" class="smartphone-view">
+            <ul>
+                <li>
+                    <a href="blogs.html">
+                        <img class="icon" src="../icons/newspaper-green.svg">
+                    </a>
+                </li>
+                <li>
+                    <a href="rezepte.html">
+                        <img class="icon" src="../icons/restaurant-green.svg">
+                    </a>
+                </li>
+                <li>
+                    <img class="icon" src="../icons/search-green.svg">
+                </li>
+                <li>
+                    <a href="user.php">
+                        <img class="icon" src="../icons/person-circle-green.svg">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 </body>
 
 </html>

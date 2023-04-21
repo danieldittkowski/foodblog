@@ -7,16 +7,13 @@
 </head>
 
 <body>
+    <?php include('header.html'); ?>
 
-    <header>
-        <?php include('header.html'); ?>
-    </header>
     <main>
-        
+    
     </main>
-    <footer>
-        <?php include('footer.html'); ?>
-    </footer>
+
+    <?php include('footer.html'); ?>
 </body>
 
 </html>

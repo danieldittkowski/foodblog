@@ -1,41 +1,75 @@
 @import url(styles.css);
 
-nav {
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
-    height: 17vh;
-    width: 100%;
+    padding: 1em 1em;
 }
 
-ul {
+header ul {
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0 0 0 2em;
+    gap: 2.5em;
 }
 
-li {
+header li {
     list-style: none;
-    padding: 2em 2em 2em 0;
 }
 
-a {
+header .font {
     text-decoration: none;
-    font-family: Poppins;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5vh;
+    font-size: 1.5em;
     color: #FFFFFF;
-    text-align: center;
 }
 
-.expandable {
-    flex-grow: 1;
+header .logo {
+    height: 6em;
 }
 
-.logo {
-    height: 10vh;
+header .icon {
+    height: 1.8em;
+    vertical-align: middle;
 }
 
-.icon {
-    height: 4.5vh;
+header .smartphone-view {
+    display: none;
+}
+
+@media  screen and (max-width: 800px) {
+    header .desktop-view {
+        display: none;
+    }
+
+    header .smartphone-view {
+        display: block;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 1em 0 0.2em 0;
+    }
+
+    header nav {
+        width: 100%;
+        background-color: white;
+    }
+
+    header ul {
+        justify-content: space-evenly;
+    }
+    
+    header li {
+        padding: 0.5em 0;
+    }
+
+    header .logo {
+        height: 6em;
+        padding: 0 0 1em 0;
+    }
+
+    header .icon {
+        height: 2em;
+    }
 }

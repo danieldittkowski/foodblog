@@ -1,32 +1,32 @@
 @import url(styles.css);
 
-.container {
-    background-color: var(--secondary-color);
-    height: 13vh;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--secondary-color);
+    height: 9em;
+    position: relative;
+    bottom: 0;
 }
 
-.socials {
+footer .socials {
     display: flex;
     justify-content: center;
-    margin: 0 0 0.5em 0;
+    gap: 1em;
+    padding: 0 0 0.5em 0;
 }
 
-.socials .icon {
-    height: 3vh;
+footer .icon {
+    height: 2em;
 }
 
-.logo-container {
+footer .logo-container {
     display: flex;
     justify-content: center;
-    margin: 0.5em 0 0 0;
+    padding: 0.5em 0 0 0;
 }
 
-.logo-container .logo {
-    height: 5vh;
+footer .logo {
+    height: 3.5em;
 }
