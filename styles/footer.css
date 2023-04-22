@@ -4,17 +4,17 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 1em;
     background-color: var(--secondary-color);
-    height: 9em;
     position: relative;
     bottom: 0;
+    padding: 1.5em 5em;
 }
 
 footer .socials {
     display: flex;
     justify-content: center;
     gap: 1em;
-    padding: 0 0 0.5em 0;
 }
 
 footer .icon {
@@ -24,7 +24,6 @@ footer .icon {
 footer .logo-container {
     display: flex;
     justify-content: center;
-    padding: 0.5em 0 0 0;
 }
 
 footer .logo {

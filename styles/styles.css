@@ -35,4 +35,7 @@
 
 .font {
     font-family: Poppins;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
