@@ -1,12 +1,10 @@
 @import url(styles.css);
 
-
 main .container {
     display: flex;
     flex-direction: column;
     gap: 4em;
     margin: 2em 5em;
-    max-width: 1055px;
 }
 
 main .sub-container {
@@ -55,12 +53,15 @@ main a {
 main a:link {
     text-decoration: none;
 }
+
 main a:hover {
     text-decoration: none;
 }
+
 main a:visited {
     text-decoration: none;
 }
+
 main a:active {
     text-decoration: none;
 }
@@ -84,7 +85,7 @@ main button:hover {
     cursor: pointer;
 }
 
-@media screen and (max-width: 943px){
+@media screen and (max-width: 943px) {
     main .smartphone-view {
         display: block;
         align-self: center;

@@ -1,0 +1,46 @@
+@import url(styles.css);
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 2em 5em;
+}
+
+main .sub-container {
+    display: flex;
+    align-items: center;
+}
+
+main .top {
+    justify-content: center;
+}
+
+main .image {
+    height: 20em;
+}
+
+main .mid {
+    justify-content: space-between;
+}
+
+main .heading {
+    font-size: 2em;
+}
+
+main .interactions {
+    display: flex;
+    gap: 2em;
+}
+
+main .icon {
+    height: 2.5em;
+    vertical-align: middle;
+}
+
+main .bottom {
+    text-overflow: clip;
+    white-space: normal;
+    overflow: auto;
+    font-size: 1.2em;
+}

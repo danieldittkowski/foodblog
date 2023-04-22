@@ -37,7 +37,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="blogs.php">
+                        <a href="blog-anzeigen.php">
                             <div class="kachel">
                                 <img class="preview" src="../icons/add-circle.svg">
                                 <div class="title font">
