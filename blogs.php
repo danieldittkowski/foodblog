@@ -26,77 +26,45 @@
                 </div>
 
                 <div class="kachel-container">
-                    <div>
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 1
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 2 mit sehr langem Titel
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 3
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 4
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="desktop-view">
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 5
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="desktop-view">
-                        <a href="blogs.php">
-                            <div class="kachel">
-                                <img class="preview" src="../icons/add-circle.svg">
-                                <div class="title font">
-                                    Blog 6
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    <?php
+                        for ($i = 1; $i < 5; $i++) {
+                            echo ('
+                                    <div>
+                                        <a href="blog-anzeigen.php">
+                                            <div class="kachel">
+                                                <img class="preview" src="../icons/add-circle.svg">
+                                                <div class="title font">
+                                                    Blog '.$i.'
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>');
+                        }
+                    ?>
+                    <?php
+                    for ($i = 5; $i < 7; $i++) {
+                        echo ('
+                                <div class="desktop-view">
+                                    <a href="blog-anzeigen.php">
+                                        <div class="kachel">
+                                            <img class="preview" src="../icons/add-circle.svg">
+                                            <div class="title font">
+                                                Blog '.$i.'
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>');
+                    }
+                    ?>
+                </div>
+                <div class="button sub-container desktop-view">
+                    <a href="blog-anlegen.php">
+                        <button class="font">
+                            Neuen Blog posten
+                        </button>
+                    </a>
                 </div>
             </div>
-
-            <div class="button sub-container desktop-view">
-                <a href="blog-anlegen.php">
-                    <button class="font">
-                        Neuen Blog posten
-                    </button>
-                </a>
-            </div>
-        </div>
     </main>
 
     <?php include('footer.html'); ?>

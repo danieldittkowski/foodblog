@@ -10,7 +10,7 @@
     <?php include('header.html'); ?>
 
     <main>
-        User
+        Rezepte
     </main>
 
     <?php include('footer.html'); ?>

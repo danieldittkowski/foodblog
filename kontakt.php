@@ -10,7 +10,7 @@
     <?php include('header.html'); ?>
 
     <main>
-        User
+        Kontakt
     </main>
 
     <?php include('footer.html'); ?>
