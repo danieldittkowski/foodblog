@@ -17,30 +17,19 @@
                     Beliebte Blogs
                 </div>
                 <div class="kachel-container">
-                <a href="blogs.php">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Blog 1
-                            </div>
-                        </div>
-                    </a>
-                    <a href="blogs.php">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Blog 2 mit einem sehr ausführlichen Titel
-                            </div>
-                        </div>
-                    </a>
-                    <a href="blogs.php">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Blog 3
-                            </div>
-                        </div>
-                    </a>
+                    <?php 
+                            for($i = 1; $i < 4; $i++) {
+                            echo('
+                            <a href="blog-anzeigen.php">
+                                <div class="kachel">
+                                    <img class="preview" src="../icons/add-circle.svg">
+                                    <div class="title font">
+                                        Blog '.$i.'
+                                    </div>
+                                </div>
+                            </a>');
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -49,33 +38,21 @@
                     Beliebte Rezepte
                 </div>
                 <div class="kachel-container">
-                    <a href="rezepte.html">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Rezept 1
-                            </div>
-                        </div>
-                    </a>
-                    <a href="rezepte.html">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Rezept 2
-                            </div>
-                        </div>
-                    </a>
-                    <a href="rezepte.html">
-                        <div class="kachel">
-                            <img class="preview" src="../icons/add-circle.svg">
-                            <div class="title font">
-                                Rezept 3
-                            </div>
-                        </div>
-                    </a>
+                    <?php 
+                        for($i = 1; $i < 4; $i++) {
+                            echo('
+                            <a href="rezepte.php">
+                                <div class="kachel">
+                                    <img class="preview" src="../icons/add-circle.svg">
+                                    <div class="title font">
+                                        Rezept '.$i.'
+                                    </div>
+                                </div>
+                            </a>');
+                        }
+                    ?>
                 </div>
             </div>
-            
         </div>
     </main>
 
