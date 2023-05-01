@@ -35,7 +35,7 @@ main .titel {
 
 main .textfeld {
     font-size: 1.3em;
-    resize: none;
+    resize: vertical;
     min-height: 15em;
     max-height: 25em;
     overflow-y: scroll;
@@ -56,6 +56,10 @@ main .upload-title {
 
 main .icon {
     height: 1.1em;
+}
+
+main .image {
+    height: 20em;
 }
 
 main .file-upload {
@@ -83,4 +87,5 @@ main .submit {
     background-color: #3f4145;
     color: #ffffff;
     border: 0.2em solid rgba(var(--custom-light-green), 1);
+
 }

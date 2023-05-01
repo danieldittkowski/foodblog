@@ -1,6 +1,8 @@
 :root {
-    --primary-color: #5E8962;
-    --secondary-color: #415D43;
+    --custom-light-green: 94, 137, 98;
+    --custom-dark-green: 65, 93, 67;
+    --custom-light-red: 224, 72, 72;
+    --custom-dark-red: 199, 54, 54;
 }
 
 @font-face {

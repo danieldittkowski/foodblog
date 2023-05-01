@@ -13,7 +13,7 @@ main .sub-container {
     gap: 2em;
 }
 
-main .rezepte {
+main .blogs:last-child {
     margin: 0 0 4em 0;
 }
 
@@ -32,7 +32,7 @@ main .kachel-container {
 main .kachel {
     height: 15em;
     width: 15em;
-    border: 3px solid var(--primary-color);
+    border: 3px solid rgba(var(--custom-light-green), 1);
     text-align: center;
 }
 

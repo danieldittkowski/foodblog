@@ -4,7 +4,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: rgba(var(--custom-light-green), 1);
     padding: 1em 5em;
 }
 

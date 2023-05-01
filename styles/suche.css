@@ -3,8 +3,26 @@
 main .container {
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 2em;
     margin: 2em 5em;
+}
+
+main form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .suche {
+    width: 100%;
+    height: 3em;
+    border: none;
+    border-bottom: 0.2em solid rgb(var(--custom-dark-green));
+    font-size: 1.3em;
+}
+
+main .icon {
+    height: 3em;
 }
 
 main .sub-container {
@@ -13,12 +31,11 @@ main .sub-container {
     gap: 2em;
 }
 
-main .smartphone-view {
-    display: none;
+main .sub-container:last-child {
+    margin: 0 0 4em 0;
 }
 
 main .heading {
-    align-self: center;
     font-size: 2em;
 }
 
@@ -71,35 +88,9 @@ main .button a {
     margin: 0 0 2em 0;
 }
 
-main button {
-    font-size: 1em;
-    height: 4em;
-    width: 15em;
-    color: #ffffff;
-    background-color: rgba(var(--custom-light-green), 1);
-    border: 0.2em solid rgba(var(--custom-dark-green), 1);
-    border-radius: 2em;
-}
-
-main button:hover {
-    cursor: pointer;
-}
-
-@media screen and (max-width: 943px) {
-    main .smartphone-view {
-        display: block;
-        align-self: center;
-    }
-
-    main .container {
-        gap: 1.5em;
-    }
-
-    main .blogs {
-        margin: 0 0 4em 0;
-    }
-
-    main .desktop-view {
-        display: none;
-    }
+main .button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
 }

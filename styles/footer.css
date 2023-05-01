@@ -5,7 +5,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     gap: 1em;
-    background-color: var(--secondary-color);
+    background-color: rgba(var(--custom-dark-green), 1);
     position: relative;
     bottom: 0;
     padding: 1.5em 5em;

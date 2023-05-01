@@ -19,12 +19,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="rezepte.php" class="font">
-                        Rezepte
+                    <a href="suche.php">
+                        <img class="icon" src="../icons/search-white.svg">
                     </a>
-                </li>
-                <li>
-                    <img class="icon" src="../icons/search-white.svg">
                 </li>
                 <li>
                     <a href="user.php">
@@ -39,12 +36,7 @@
                     <a href="blogs.php">
                         <img class="icon" src="../icons/newspaper-green.svg">
                     </a>
-                </li>
-                <li>
-                    <a href="rezepte.php">
-                        <img class="icon" src="../icons/restaurant-green.svg">
-                    </a>
-                </li>
+                </li>x
                 <li>
                     <img class="icon" src="../icons/search-green.svg">
                 </li>

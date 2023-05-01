@@ -1,1 +1,46 @@
 @import url(styles.css);
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin: 2em 5em;
+}
+
+main .heading {
+    align-self: center;
+    font-size: 2em;
+}
+
+main .info-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .spalte {
+    flex-basis: 10em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+main .info {
+    font-size: 1.2em;
+}
+
+main form {
+    display: flex;
+    justify-content: center;
+}
+
+main .button {
+    font-size: 1.1em;
+    flex-basis: 10em;
+    border-radius: 1em;
+    padding: 0.4em;
+}
+main .submit {
+    color: #ffffff;
+    background-color: rgba(var(--custom-light-green), 1);
+    border: 0.2em solid rgba(var(--custom-dark-green), 1);
+}

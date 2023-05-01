@@ -1,3 +1,26 @@
+<?php
+$connection = mysqli_connect('localhost', 'root', '', 'foodblog');
+
+if (!isset($connection)) {
+    die('Connection failed ' . $connection->error);
+}
+
+$query = 'SELECT * FROM BEITRAG ORDER BY id DESC LIMIT 6;';
+$result_newest = mysqli_query($connection, $query);
+
+if (!isset($result_newest)) {
+    die('Invalid query: ' . mysqli_error($connection));
+}
+
+$query = 'SELECT * FROM BEITRAG ORDER BY id ASC LIMIT 6;';
+$result_popular = mysqli_query($connection, $query);
+
+if (!isset($result_popular)) {
+    die('Invalid query: ' . mysqli_error($connection));
+}
+
+$connection->close();
+?>
 <html>
 
 <head>
@@ -7,49 +30,49 @@
 </head>
 
 <body>
-    <?php include('header.html'); ?>
+    <?php include('header.php'); ?>
 
     <main>
         <div class="container">
 
             <div class="blogs sub-container">
                 <div class="heading font">
-                    Beliebte Blogs
+                    Neuste Blogs
                 </div>
                 <div class="kachel-container">
-                    <?php 
-                            for($i = 1; $i < 4; $i++) {
-                            echo('
-                            <a href="blog-anzeigen.php">
+                    <?php
+                    foreach ($result_newest as $blog) {
+                        echo ('
+                            <a href="blog-anzeigen.php?id=' . $blog['id'] . '">
                                 <div class="kachel">
-                                    <img class="preview" src="../icons/add-circle.svg">
+                                    <img class="preview" src=' . $blog['bildpfad'] . '>
                                     <div class="title font">
-                                        Blog '.$i.'
+                                       ' . $blog['titel'] . ' 
                                     </div>
                                 </div>
                             </a>');
-                        }
+                    }
                     ?>
                 </div>
             </div>
 
-            <div class="rezepte sub-container">
+            <div class="blogs sub-container">
                 <div class="heading font">
-                    Beliebte Rezepte
+                    Beliebte Blogs
                 </div>
                 <div class="kachel-container">
-                    <?php 
-                        for($i = 1; $i < 4; $i++) {
-                            echo('
-                            <a href="rezepte.php">
+                    <?php
+                    foreach ($result_popular as $blog) {
+                        echo ('
+                            <a href="blog-anzeigen.php?id=' . $blog['id'] . '">
                                 <div class="kachel">
-                                    <img class="preview" src="../icons/add-circle.svg">
+                                    <img class="preview" src=' . $blog['bildpfad'] . '>
                                     <div class="title font">
-                                        Rezept '.$i.'
+                                       ' . $blog['titel'] . ' 
                                     </div>
                                 </div>
                             </a>');
-                        }
+                    }
                     ?>
                 </div>
             </div>
