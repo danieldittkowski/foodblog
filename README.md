@@ -1,11 +1,11 @@
 # foodblog
 
 ## Ordnerstruktur
-wiinf/foodblog -> hier sind die html bzw. php-Files drin, sowie der styles-Ordner
-wiinf/logos
-wiinf/symbols
-wiinf/font
-wiinf/uploads
+wiinf/foodblog -> hier sind die html bzw. php-Files drin, sowie der styles-Ordner  
+wiinf/logos  
+wiinf/symbols  
+wiinf/font  
+wiinf/uploads  
 
 ## Datenbank
 Name: foodblog
