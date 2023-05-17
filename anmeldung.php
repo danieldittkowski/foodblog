@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+$_SESSION['vorherige_seite'] = $_SERVER['PHP_SELF'];
+
 if (isset($_POST['submit-button'])) {
 
     $connection = mysqli_connect("localhost", "root", "", "foodblog");
@@ -8,10 +12,10 @@ if (isset($_POST['submit-button'])) {
         die("Connection failed: " . $connection->error);
     }
 
-    $query = 'SELECT password FROM USER WHERE USERNAME = "' . $_POST['username'] . '";';
+    $query = 'SELECT password FROM user WHERE userNAME = "' . $_POST['username'] . '";';
     $result = mysqli_query($connection, $query);
 
-    if (!isset($result)) {
+    if (!$result) {
         die('Invalid query: ' . mysqli_error($connection));
     }
 
@@ -21,15 +25,15 @@ if (isset($_POST['submit-button'])) {
         $fehler['username'] = "Der Username existiert nicht.";
     }
 
-    if (isset($row['password']) && $row['password'] != $_POST['password']) {
+    if (isset($row['password']) && $row['password'] != password_verify($_POST['password'], $row['password'])) {
         $fehler['password'] = "Das Passwort ist falsch.";
     }
 
     if (!isset($fehler)) {
-        $query = 'SELECT ID FROM USER WHERE USERNAME = "' . $_POST['username'] . '";';
+        $query = 'SELECT ID FROM user WHERE userNAME = "' . $_POST['username'] . '";';
         $result = mysqli_query($connection, $query);
 
-        if (!isset($result)) {
+        if (!$result) {
             die('Invalid query: ' . mysqli_error($connection));
         }
 
@@ -39,7 +43,7 @@ if (isset($_POST['submit-button'])) {
         session_start();
         $_SESSION['id'] = session_id();
         $_SESSION['user_id'] = $user_id;
-        header('Location: user.php');
+        header('Location: index.php');
     }
 
     $connection->close();
@@ -56,7 +60,7 @@ if (isset($_POST['submit-button'])) {
 </head>
 
 <body>
-    <?php include('header.php'); ?>
+    <?php include('header.html'); ?>
 
     <main>
         <div class="container">
@@ -69,7 +73,7 @@ if (isset($_POST['submit-button'])) {
                     . '</div>
                         <button class="fehler-ausblenden">
                             <a href="#fehler-nachricht">
-                                <img class="icon" src="../icons/close.svg">
+                                <img class="icon" src="../symbols/close.svg">
                             </a>
                         </button>
                     </div>');
@@ -82,7 +86,7 @@ if (isset($_POST['submit-button'])) {
                     . '</div>
                         <button class="fehler-ausblenden">
                             <a href="#fehler-nachricht">
-                                <img class="icon" src="../icons/close.svg">
+                                <img class="icon" src="../symbols/close.svg">
                             </a>
                         </button>
                     </div>');
@@ -98,7 +102,7 @@ if (isset($_POST['submit-button'])) {
                             <input class="input font" type="text" name="username" placeholder="Username" required>
                         </div>
                         <div>
-                            <input class="input font" type="password" name="password" placeholder="Bitte geben Sie hier Ihr Passwort ein" required>
+                            <input class="input font" type="password" name="password" placeholder="Passwort" required>
                         </div>
                         <div class="button-container">
                             <a class="font registrieren button" href="registrierung.php">

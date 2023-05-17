@@ -35,6 +35,7 @@ main #fehler-nachricht:target {
 
 main .icon {
     height: 3em;
+    vertical-align: middle;
 }
 
 main .form-container{
@@ -92,4 +93,18 @@ main .submit {
     background-color: #3f4145;
     color: #ffffff;
     border: 0.2em solid rgba(var(--custom-light-green), 1);
+}
+
+@media screen and (max-width: 640px){
+    main .button-container {
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .button {
+        flex-basis: auto;
+        width: 10em;
+    }
 }

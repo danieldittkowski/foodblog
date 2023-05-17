@@ -4,29 +4,29 @@ $connection = mysqli_connect("localhost", "root", "", "foodblog");
 if (isset($_POST['submit-button'])) {
 
     if ($_POST['password'] != $_POST['password2']) {
-        $fehler['password'] = "Die Passwörter stimmen nicht überein.";
+        $fehler['password'] = "Passwörter ungleich.";
     }
 
-    $query = 'SELECT * FROM USER WHERE USERNAME = "' . $_POST['username'] . '";';
+    $query = 'SELECT * FROM user WHERE userNAME = "' . $_POST['username'] . '";';
     $result = mysqli_query($connection, $query);
 
-    if (!isset($result)) {
+    if (!$result) {
         die('Invalid query: ' . mysqli_error($connection));
     }
 
     $row = $result->fetch_assoc();
 
     if (isset($row)) {
-        $fehler['username'] = "Dieser Username ist bereits vergeben.";
+        $fehler['username'] = "Username bereits vergeben.";
     }
 }
 
 if (!isset($fehler) && isset($_POST['submit-button'])) {
-    $query = 'INSERT INTO USER(USERNAME, PASSWORD) VALUES("' . $_POST['username'] . '", "' . $_POST['password'] . '");';
+    $query = 'INSERT INTO user(userNAME, PASSWORD) VALUES("' . $_POST['username'] . '", "' . password_hash($_POST['password'], PASSWORD_BCRYPT) . '");';
 
     $result = mysqli_query($connection, $query);
 
-    if (!isset($result)) {
+    if (!$result) {
         die('Invalid query: ' . mysqli_error($connection));
     }
 
@@ -46,37 +46,53 @@ $connection->close();
 </head>
 
 <body>
-    <?php include('header.php'); ?>
+    <?php include('header.html'); ?>
 
     <main>
         <div class="container">
             <?php
-                if(isset($fehler['username'])) {
-                    echo('
+            if (isset($fehler['username']) && !isset($fehler['password'])) {
+                echo ('
                     <div class="fehler font" id="fehler-nachricht">
-                        <div>'.
-                            $fehler['username']
-                        .'</div>
+                        <div>' .
+                    $fehler['username']
+                    . '</div>
                         <button class="fehler-ausblenden">
                             <a href="#fehler-nachricht">
-                                <img class="icon" src="../icons/close.svg">
+                                <img class="icon" src="../symbols/close.svg">
                             </a>
                         </button>
                     </div>');
-                }
-                if(isset($fehler['password'])) {
-                    echo('
+            }
+            if (!isset($fehler['username']) && isset($fehler['password'])) {
+                echo ('
                     <div class="fehler font" id="fehler-nachricht">
-                        <div>'.
-                            $fehler['password']
-                        .'</div>
+                        <div>' .
+                    $fehler['password']
+                    . '</div>
                         <button class="fehler-ausblenden">
                             <a href="#fehler-nachricht">
-                                <img class="icon" src="../icons/close.svg">
+                                <img class="icon" src="../symbols/close.svg">
                             </a>
                         </button>
                     </div>');
-                }
+            }
+            if (isset($fehler['username']) && isset($fehler['password'])) {
+                echo ('
+                    <div class="zwei fehler font" id="fehler-nachricht">
+                        <div>' .
+                            $fehler['username']. '
+                            <br>
+                            <br>'.
+                            $fehler['password'].'
+                        </div>
+                        <button class="fehler-ausblenden">
+                            <a href="#fehler-nachricht">
+                                <img class="icon" src="../symbols/close.svg">
+                            </a>
+                        </button>
+                    </div>');
+            }
             ?>
             <div class="heading font">
                 Registrierung
@@ -88,40 +104,40 @@ $connection->close();
                             <?php
                             if (isset($fehler['username'])) {
                                 echo ('
-                                        <input class="input font username" type="text" name="username" placeholder="Username" value="' . $_POST['username'] . '"required>
+                                        <input class="input font username" type="text" name="username" placeholder="Username" value="' . $_POST['username'] . '" required>
                                     ');
                             }
                             if (!isset($fehler['username'])) {
                                 echo ('
-                                        <input class="input font" type="text" name="username" placeholder="Username" required>
+                                        <input class="input font" type="text" name="username" placeholder="Username" required value="' . $_POST['username'] . '">
                                     ');
                             }
                             ?>
                         </div>
                         <div>
                             <?php
-                            if (isset($fehler['username'])) {
+                            if (isset($fehler['password'])) {
                                 echo ('
                                         <input class="input font password" type="password" name="password" placeholder="Passwort" required value="' . $_POST['password'] . '">
                                     ');
                             }
-                            if (!isset($fehler['username'])) {
+                            if (!isset($fehler['password'])) {
                                 echo ('
-                                        <input class="input font" type="password" name="password" placeholder="Passwort" required>
+                                        <input class="input font" type="password" name="password" placeholder="Passwort" value="' . $_POST['password'] . '" required>
                                     ');
                             }
                             ?>
                         </div>
                         <div>
                             <?php
-                            if (isset($fehler['username'])) {
+                            if (isset($fehler['password'])) {
                                 echo ('
                                         <input class="input font password" type="password" name="password2" placeholder="Passwort wiederholen" required value="' . $_POST['password2'] . '">
                                     ');
                             }
-                            if (!isset($fehler['username'])) {
+                            if (!isset($fehler['password'])) {
                                 echo ('
-                                        <input class="input font" type="password" name="password2" placeholder="Passwort wiederholen" required>
+                                        <input class="input font" type="password" name="password2" placeholder="Passwort wiederholen" value="' . $_POST['password'] . '" required>
                                     ');
                             }
                             ?>

@@ -7,6 +7,30 @@ main .container {
     margin: 2em 5em;
 }
 
+main .nachricht {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.2em solid rgba(var(--custom-light-green), 1);
+    padding: 1em 2em;
+    background-color: rgba(var(--custom-light-green), 0.2);
+}
+
+main .nachricht-icon {
+    height: 3em;
+}
+
+main .nachricht-ausblenden {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+main #nachricht:target {
+    display: none;
+}
+
 main .sub-container {
     display: flex;
     flex-direction: column;

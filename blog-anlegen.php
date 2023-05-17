@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['vorherige_seite'] = $_SERVER['PHP_SELF'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,7 +12,7 @@
 </head>
 
 <body>
-    <?php include('header.php'); ?>
+    <?php include('header.html'); ?>
 
     <main>
         <div class="container">
@@ -28,13 +32,14 @@
                             <div>
                                 <div class="upload-title font">
                                     <div>
-                                        Hier Blogbild hochladen
+                                        Hier Blogbild hochladen (max. 5 MB)
                                     </div>
-                                    <img class="icon" src="../icons/chevron-down-circle-dark-green.svg">
+                                    <img class="icon" src="../symbols/chevron-down-circle-dark-green.svg">
                                 </div>
                             </div>
                             <div>
                                 <input class="input font file-upload" type="file" name="bild" required>
+                                <input" type="hidden" name="MAX_FILE_SIZE" value="5000000">
                             </div>
                         </div>
                         <div class="button-container">

@@ -26,6 +26,7 @@ main .mid {
 
 main .heading {
     font-size: 2em;
+    white-space:normal;
 }
 
 main .nachricht {

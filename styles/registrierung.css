@@ -13,13 +13,17 @@ main .heading {
     font-size: 2em;
 }
 
-main .fehler {
+main .fehler{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 0.2em solid rgba(var(--custom-dark-red), 1);
     padding: 1em 2em;
     background-color: rgba(var(--custom-dark-red), 0.2);
+}
+
+main .zwei {
+    padding: 2em 2em;
 }
 
 main .fehler-ausblenden {
@@ -35,6 +39,7 @@ main #fehler-nachricht:target {
 
 main .icon {
     height: 3em;
+    vertical-align: middle;
 }
 
 main .form-container{
@@ -102,4 +107,18 @@ main .submit {
     background-color: #3f4145;
     color: #ffffff;
     border: 0.2em solid rgba(var(--custom-light-green), 1);
+}
+
+@media screen and (max-width: 640px){
+    main .button-container {
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main .button {
+        flex-basis: auto;
+        width: 10em;
+    }
 }
